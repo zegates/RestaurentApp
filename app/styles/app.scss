@@ -1,3 +1,7 @@
+@import 'foundation/settings'; /* import everything */
+
+$topbar-bg-color:#309199;
+
 @import 'foundation'; /* import everything */
 @import 'normalize'; /* import everything */
 // And so on...
@@ -5,21 +9,20 @@
 .custom-side-nav{
   @include side-nav(
     // Border color of divider
-  $divider-color: '#dddddd',
-    // Font size of nav items
-  $font-size:1.2em,
+  $divider-color: #ffffff,
     // Color of navigation links
-  $link-color:'#ccc',
+  $link-color:#A7AEB6,
     // Color of navigation links on active
-  $link-color-active: '#444',
+  $link-color-active: #444,
     // Color of navigation links on hover
-  $link-color-hover: '#444'
-  );
+  $link-color-hover: #fff
+  )
 }
 
 body {
   background-color: #fcfcfb;
 }
 .left-pane{
-  background-color: #efefef;
+  height: 100%;
+  background-color: #333333;
 }
