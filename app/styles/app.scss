@@ -1,0 +1,25 @@
+@import 'foundation'; /* import everything */
+@import 'normalize'; /* import everything */
+// And so on...
+/* or just import the bits you need: @import 'foundation/functions'; */
+.custom-side-nav{
+  @include side-nav(
+    // Border color of divider
+  $divider-color: '#dddddd',
+    // Font size of nav items
+  $font-size:1.2em,
+    // Color of navigation links
+  $link-color:'#ccc',
+    // Color of navigation links on active
+  $link-color-active: '#444',
+    // Color of navigation links on hover
+  $link-color-hover: '#444'
+  );
+}
+
+body {
+  background-color: #fcfcfb;
+}
+.left-pane{
+  background-color: #efefef;
+}

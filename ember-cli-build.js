@@ -3,7 +3,18 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    outputPaths: {
+      app: {
+        css: {
+          'app': '/assets/restaurent-app.css'
+        }
+      }
+    } ,
+    sassOptions: {
+      includePaths: [
+        'bower_components/foundation/scss'
+      ]
+    }// Add options here
   });
 
   // Use `app.import` to add additional libraries to the generated

@@ -5,12 +5,21 @@ module.exports = function(environment) {
     modulePrefix: 'restaurent-app',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+    contentSecurityPolicy: {
+      'default-src': "*",
+      'script-src': "* 'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com",
+      'font-src': "* 'self' data: use.typekit.net",
+      'connect-src': "* 'self'",
+      'img-src': "* 'self'",
+      'style-src': "* 'self' 'unsafe-inline' use.typekit.net",
+      'frame-src': "* s-static.ak.facebook.com static.ak.facebook.com www.facebook.com"
     },
 
     APP: {
@@ -40,7 +49,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
