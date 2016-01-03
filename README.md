@@ -1,6 +1,6 @@
 # Restaurent-app
 
-This README outlines the details of collaborating on this Ember application.
+This README outlines the details of collaborating on this Ember application which uses Ember Node Webkit.
 A short introduction of this app could easily go here.
 
 ## Prerequisites
