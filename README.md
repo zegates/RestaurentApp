@@ -1,6 +1,6 @@
 # Restaurent-app
 
-This README outlines the details of collaborating on this Ember application.
+This README outlines the details of collaborating on this Ember application which uses Ember Node Webkit.
 A short introduction of this app could easily go here.
 
 ## Prerequisites
@@ -11,7 +11,7 @@ You will need the following things properly installed on your computer.
 * [Node.js](http://nodejs.org/) (with NPM)
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+* [Ember NW](https://github.com/brzpegasus/ember-cli-nwjs)
 
 ## Installation
 
@@ -19,11 +19,14 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* `ember install ember-cli-nwjs`
+* `ember generate ember-cli-nwjs` 
 
 ## Running / Development
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* `ember nw`
+
+As the app gets rebuilt during development, the NW.js window will automatically reload the current page, so you can see the changes that you made without having to stop and restart the entire process.
 
 ### Code Generators
 
