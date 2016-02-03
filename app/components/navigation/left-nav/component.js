@@ -13,8 +13,23 @@ export default Ember.Component.extend({
     addOrder() {
       let orderPath = this.get('config-path').componentPath['add-order'];
       this.set('mainWidget', orderPath);
+      this.sendAction('setWidget', orderPath);
+      console.log('cant sret');
+
+    },
+    customerPanel(){
+      let customerPanel = this.get('config-path').componentPath['customer-panel'];
+      this.set('mainWidget', customerPanel);
+      this.sendAction('setWidget', customerPanel);
+    },
+
+    addCustomer(customer) {
+      console.log(customer.fname+' customer');
+      this.sendAction('addCustomer', customer);
+      this.set('customer', {});
     }
   },
+
 
   getMainWidget:function(){
     return this.get('mainWidget');

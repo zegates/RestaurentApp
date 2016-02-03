@@ -42,6 +42,7 @@
     "nw": "0.12.3"
   },
   "main": "dist/index.html",
+
   "window": {
     "width": 960,
     "height": 600
