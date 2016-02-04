@@ -23,19 +23,14 @@
     <!--</div>-->
 <!--</div>-->
 
-<div class="row" style="max-width: 100%">
-<div class=" small-2 columns left-pane">
+
+
     <ul class="custom-side-nav">
-        <li class="active"><a href="#" {{action "addOrder" }}>ORDERS</a></li>
-        <li><a href="#" {{action "customerPanel"}} >CUSTOMERS</a></li>
+        <li class="active"><a href="#" {{action "setWidget" "order-panel"}}>ORDERS</a></li>
+        <li><a href="#" {{action "setWidget" "customer-panel"}} >CUSTOMERS</a></li>
         <li class="divider divider-color"></li>
         <li><a href="#">KITCHEN</a></li>
         <li><a href="#">LOG</a></li>
     </ul>
-</div>
 
-<div class="small-10 columns">
-  {{component getMainWidget attr=attr}}
-    {{!module/customer-panel attr=attr}}
-</div>
-</div>
+

@@ -6,16 +6,16 @@ export default Ember.Route.extend({
     return {
       attr:{
         customer:{fname:"Sandaruwan", lname:"Nanayakkara"},
-        mainWidget:'module/add-order'
+        //mainWidget:'module/add-order'
       }
     };
-  },
-
-  actions: {
-    setWidget: function (widgetName) {
-      alert(' sss ');
-    }
   }
+
+  //actions: {
+  //  setWidget: function (widgetName) {
+  //    alert(' sss ');
+  //  }
+  //}
 
 
   //actions: {
