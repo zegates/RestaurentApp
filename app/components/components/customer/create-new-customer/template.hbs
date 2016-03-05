@@ -1,0 +1,28 @@
+<form>
+
+
+<div class="row">
+    <div class="medium-6 columns">
+        <label>First Name
+          {{input value=customer.fname placeholder="First Name"}}
+        </label>
+    </div>
+    <div class="medium-6 columns">
+        <label>Last Name
+          {{input value=customer.lname placeholder="Last Name"}}
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="columns">
+        <label>Address
+          {{input value=customer.address placeholder="Address"}}
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="columns">
+        <button class="small button" {{action "addCustomer" customer }}>Add Customer</button>
+    </div>
+</div>
+</form>

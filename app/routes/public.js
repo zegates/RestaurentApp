@@ -1,32 +1,43 @@
 import Ember from 'ember';
+import auth from 'restaurent-app/controllers/authentication';
+import cms from 'restaurent-app/namespaces/cmservice';
 
 export default Ember.Route.extend({
+
+  init(){
+    this._super();
+    let self = this;
+    auth.addObserver('authStatus', function(){
+      self.authStatus(this.get('authStatus'));
+    });
+  },
+
+  authStatus(authStatus){
+    if(authStatus === cms.AuthenticationStatus.FAIL){
+      this.transitionTo('public');
+    }else if(authStatus === cms.AuthenticationStatus.SUCCESS){
+      this.transitionTo('secure');
+    }
+  },
+
 
   model() {
     return {
       attr:{
-        customer:{fname:"Sandaruwan", lname:"Nanayakkara"},
-        //mainWidget:'module/add-order'
+        customer:{fname:"Sandaruwan", lname:"Nanayakkara", username:'', password:''},
       }
     };
   },
 
   actions: {
-    addCustomer(customer) {
-      console.log(customer.fname+' customer router');
-      if(customer.fname && customer.lname) {
-        let newPost = this.store.createRecord('customer', {
-          firstName: customer.fname,
-          lastName: customer.lname,
-          address: customer.address,
-          createdDate: new Date()
-        });
-        newPost.save();
-        let comet = this.get('cometd-service');
-        comet.initConnection();
-        comet.subscribeChannels();
-        comet.createCustomer(newPost);
-      }
+    login(customer) {
+      console.log(customer.username+' customer login router');
+
+      let comet = this.get('cometd-service');
+      let auth_service = this.get('auth-service');
+      comet.initConnection();
+      comet.subscribeAuthChannels(auth_service.updateAuthenticationStatus);
+      comet.authenticate(customer);
     }
   }
 });
