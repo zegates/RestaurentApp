@@ -1,0 +1,25 @@
+<div class="small-6 small-centered columns">
+    <div class="login-box">
+        <div class="row">
+            <div class="small-12 columns">
+                <form>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            {{input value=customer.username placeholder="Username"}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            {{input value=customer.password placeholder="Password" type="password"}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 large-centered columns">
+                            <input type="button" class="button expand" value="Log In" {{action "login" customer}}/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

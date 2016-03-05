@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba75505-187b-4c2b-9836-c9c0acb89019" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/adapters/application.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/components/customer/create-new-customer/component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/components/customer/create-new-customer/template.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/components/customer/customer-panel/component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/components/customer/customer-panel/template.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/authentication.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/initializers/authentication-service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/initializers/cometd-service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/initializers/common/authentication/auth-service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/initializers/widget-config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/customer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/namespaces/cmservice.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/routes/secure.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/services/store.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/secure.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/router.js" afterPath="$PROJECT_DIR$/app/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/public.js" afterPath="$PROJECT_DIR$/app/routes/public.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/app.scss" afterPath="$PROJECT_DIR$/app/styles/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/public.hbs" afterPath="$PROJECT_DIR$/app/templates/public.hbs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/module/main-content/component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/module/main-content/template.hbs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/module/public/login-form/component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/module/public/login-form/template.hbs" />
     </list>
     <ignored path="RestaurentApp.iws" />
     <ignored path=".idea/workspace.xml" />
