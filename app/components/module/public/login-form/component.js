@@ -3,10 +3,10 @@ import auth from 'restaurent-app/controllers/authentication';
 
 export default Ember.Component.extend({
 
-  init(){
-    this._super();
-
-  },
+  //init(){
+  //  this._super();
+  //
+  //},
 
   actions: {
     login(customer) {

@@ -24,7 +24,7 @@ export default Ember.Route.extend({
   model() {
     return {
       attr:{
-        customer:{fname:"Sandaruwan", lname:"Nanayakkara", username:'', password:''},
+        customer:{fname:'', lname:'', username:'', password:''},
       }
     };
   },

@@ -6,6 +6,7 @@ import Ember from 'ember';
 let authentication = Ember.Object.extend({
 
   authStatus:'FAIL',
+  customer:''
 
   //onAuthStatusChange:Ember.observer('authStatus', function(){
   //  console.log('s*************');

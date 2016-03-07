@@ -22,6 +22,13 @@
 </div>
 <div class="row">
     <div class="columns">
+        <label>Password
+          {{input value=customer.password placeholder="password"}}
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="columns">
         <button class="small button" {{action "addCustomer" customer }}>Add Customer</button>
     </div>
 </div>

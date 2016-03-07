@@ -13,7 +13,7 @@ export default Ember.Route.extend({
   model() {
     return {
       attr:{
-        customer:{fname:"Sandaruwan", lname:"Nanayakkara"},
+        customer:auth.customer,
         //mainWidget:'module/add-order'
       }
     };
@@ -27,11 +27,12 @@ export default Ember.Route.extend({
           firstName: customer.fname,
           lastName: customer.lname,
           address: customer.address,
+          password: customer.password,
           createdDate: new Date()
         });
         newPost.save();
         let comet = this.get('cometd-service');
-        comet.initConnection();
+        //comet.initConnection();
         comet.subscribeChannels();
         comet.createCustomer(newPost);
       }

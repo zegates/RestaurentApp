@@ -16,14 +16,8 @@ export function initialize(application) {
     },
 
     subscribeChannels(){
-      this._cometd.subscribe("/cms/customer/create", function(message){
+      this._cometd.subscribe("/cms/customer/create/status", function(message){
         console.log("received", message);
-        let authStatus = message.get('AUTH_OPERATION');
-        if(authStatus === cmservice.AuthenticationStatus.SUCCESS){
-          alert('Sucess')
-        }else if(authStatus === cmservice.AuthenticationStatus.FAIL) {
-
-        }
       });
 
     },
