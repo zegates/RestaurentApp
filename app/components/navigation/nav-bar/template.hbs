@@ -1,39 +1,67 @@
-<nav class="top-bar" data-topbar role="navigation">
+<div class="off-canvas-wrap"  style="overflow: visible" data-offcanvas>
+    <div class="inner-wrap" style="z-index:1000;">
+        <nav class="tab-bar">
+            <section class="left-small">
+                <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </section>
 
-    <ul class="title-area">
+            <section class="middle tab-bar-section">
+                <nav class="top-bar" data-topbar role="navigation">
+                    <ul class="title-area">
 
-        <li class="name">
-            <h1><a href="#">VOZCO</a></h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+                        <li class="name">
+                            <h1><a href="#">VOZCO</a></h1>
+                        </li>
+                        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    </ul>
 
-    <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-            <li class="has-dropdown">
-                <a href="#">Files</a>
-                <ul class="dropdown">
-                    <li><a href="#">Synchronize</a></li>
-                    <li class="active"><a href="#">Check Messages</a></li>
-                </ul>
-            </li>
-            <li class="has-dropdown">
-                <a href="#">Edit</a>
-                <ul class="dropdown">
-                    <li><a href="#">Copy</a></li>
-                    <li class="active"><a href="#">Paste</a></li>
-                </ul>
-            </li>
-            <li class="has-dropdown">
-                <a href="#">Common</a>
-                <ul class="dropdown">
-                    <li>sAdd Customer</a></li>
-                    <li><a href="#">Add Order</a></li>
-                </ul>
-            </li>
-        </ul>
+                    <section class="top-bar-section">
+                        <!-- Left Nav Section -->
+                        <ul class="left">
+                            <li class="has-dropdown">
+                                <a href="#">Files</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Synchronize</a></li>
+                                    <li class="active"><a href="#">Check Messages</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Edit</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Copy</a></li>
+                                    <li class="active"><a href="#">Paste</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Common</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Add Customer</a></li>
+                                    <li><a href="#">Add Order</a></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-    </section>
-</nav>
+                    </section>
+                </nav>
+            </section>
+        </nav>
+
+        <!-- Off Canvas Menu -->
+        <aside class="left-off-canvas-menu" style="overflow: visible; background-color: #4d4d4d; z-index:1000;">
+            <!-- whatever you want goes here -->
+            <ul class="off-canvas-list" style="overflow: visible; background-color: #4d4d4d; z-index:1000; display: block">
+                <li class="active"><a href="#" {{action "setWidget" "order-panel"}}>ORDERS</a></li>
+                <li><a href="#" {{action "setWidget" "customer-panel"}} >CUSTOMERS</a></li>
+                <li class="divider divider-color"></li>
+                <li><a href="#">KITCHEN</a></li>
+                <li><a href="#">LOG</a></li>
+            </ul>
+        </aside>
+
+        <!-- close the off-canvas menu -->
+        <a class="exit-off-canvas"></a>
+
+    </div>
+</div>
+
+

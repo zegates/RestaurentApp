@@ -4,6 +4,10 @@ import cms from 'restaurent-app/namespaces/cmservice';
 
 export default Ember.Route.extend({
 
+  mainWidget:Ember.Object.create({
+    widget: 'empty-view'
+  }),
+
   beforeModel: function() {
     if(auth.authStatus === cms.AuthenticationStatus.FAIL){
       this.transitionTo('public');
@@ -14,7 +18,7 @@ export default Ember.Route.extend({
     return {
       attr:{
         customer:auth.customer,
-        //mainWidget:'module/add-order'
+        mainWidget:this.mainWidget
       }
     };
   },
@@ -36,6 +40,14 @@ export default Ember.Route.extend({
         comet.subscribeChannels();
         comet.createCustomer(newPost);
       }
+    },
+    setWidget(path) {
+      console.log('main content set widget: '+ path);
+      this.mainWidget.set('widget',path);
     }
   }
+  //,
+  //getMainWidget:function(){
+  //  return this.mainWidget;
+  //}.property('mainWidget.widget')
 });

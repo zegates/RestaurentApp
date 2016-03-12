@@ -1,7 +1,10 @@
 @import 'foundation/settings'; /* import everything */
 
-$topbar-bg-color:#309199;
+$topbar-color: #309199;
 
+$topbar-bg-color:$topbar-color;
+$off-canvas-bg: $topbar-color;
+$tabbar-bg:$topbar-color;
 @import 'foundation'; /* import everything */
 @import 'normalize'; /* import everything */
 // And so on...
