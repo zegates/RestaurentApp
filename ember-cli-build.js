@@ -16,6 +16,7 @@ module.exports = function(defaults) {
   app.import("bower_components/ember-localstorage-adapter/localstorage_adapter.js");
   app.import('vendor/cometd.js');
   app.import('vendor/jquery.cometd.js');
+  //app.import('vendor/ember-table.js');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

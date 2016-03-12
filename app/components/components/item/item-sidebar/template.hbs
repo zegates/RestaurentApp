@@ -1,1 +1,45 @@
-Item Name1
+<section class="select-large large">
+    <button>{{getMainItem}}</button>
+    <ul class="select-dropdown">
+      {{#each-in selectList as |item name|}}
+          <li {{action "selectItem" item}}>{{name}}</li>
+      {{/each-in}}
+    </ul>
+</section>
+
+<div class="item-side-panel">
+  <article class="food-side">
+      <div class="food-desc">
+        <div class="th food-image left">
+            <img src="img/rice.jpg" width="50px"/>
+        </div>
+        <div class="food-desc-price">LKR 120.00</div>
+        <div class="food-desc-header">White Rice</div>
+        <div class="food-desc-detail">BDConf - Washington, DC</div>
+      </div>
+      <div class="food-add">
+          <div class="food-add-button"><div class="add-btn">+</div></div>
+          <div class="food-add-qty">10</div>
+          <div class="food-add-button"><div class="ded-btn">_</div></div>
+          <button class="food-add-cart">Add to Cart</button>
+          <div class="food-select"><div class="threedots-vert"></div></div>
+      </div>
+  </article>
+    <article class="food-side">
+        <div class="food-desc">
+            <div class="th food-image left">
+                <img src="img/rice.jpg" width="50px"/>
+            </div>
+            <div class="food-desc-price">LKR 120.00</div>
+            <div class="food-desc-header">White Rice</div>
+            <div class="food-desc-detail">BDConf - Washington, DC</div>
+        </div>
+        <div class="food-add">
+            <div class="food-add-button"><div class="add-btn">+</div></div>
+            <div class="food-add-qty">10</div>
+            <div class="food-add-button"><div class="ded-btn">_</div></div>
+            <button class="food-add-cart">Add to Cart</button>
+            <div class="food-select"><div class="threedots-vert"></div></div>
+        </div>
+    </article>
+</div>

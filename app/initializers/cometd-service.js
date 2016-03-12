@@ -38,7 +38,7 @@ export function initialize(application) {
 
     createCustomer(customer){
       this._cometd.publish("/cms/customer/create", {
-        cid: 'jema',
+        cid: customer.fname,
         text: 'hello'
       });
     }

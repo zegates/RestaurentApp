@@ -6,6 +6,12 @@ $topbar-bg-color:#309199;
 @import 'normalize'; /* import everything */
 // And so on...
 /* or just import the bits you need: @import 'foundation/functions'; */
+
+@mixin box-shadow($top, $left, $blur, $spread,$color) {
+  -webkit-box-shadow:$top $left $blur $spread $color;
+  -moz-box-shadow:$top $left $blur $spread $color;
+  box-shadow:$top $left $blur $spread $color;
+}
 .custom-side-nav{
   @include side-nav(
     // Border color of divider
@@ -27,8 +33,155 @@ body {
   background-color: #333333;
 }
 .login-box {
-  background: #fff;
-  border: 1px solid #ddd;
   margin: 100px 0;
   padding: 40px 20px 0 20px;
+}
+// Default medium-gray color
+$medium-gray: #cacaca;
+// Default global padding
+$global-padding: 1rem;
+// Global value used for all elements that have a border radius.
+$global-radius: 3px;
+
+// Setting the form border color
+$form-border-color: $medium-gray;
+// Setting the form padding
+$form-padding: $global-padding;
+// Setting the form border radius
+$form-radius: $global-radius;
+
+.log-in-form {
+  border: 1px solid $form-border-color;
+  padding: $form-padding;
+  border-radius: $form-radius;
+}
+
+.list-items{
+  margin: 0px 10px 0px 10px;
+}
+.list-items .row{
+  @include box-shadow(0, 3px, 3px, -3px, #777);
+  background: $white;color: #88888A;
+  height: 50px;
+  margin-top: 2px;
+
+}
+.list-items .row .columns{
+  display: table-cell;
+  vertical-align: middle;
+}
+// dropdown
+.select-large {
+  left: 0;
+  position: relative;
+  width: 100%;
+  background-color: $white;color: #88888A;
+}
+.select-large button {
+  background: $white;width: 100%;color: #1a1a1a; @include box-shadow(0, 3px, 3px, -3px, #777);
+}
+.select-large button:hover {
+  color: #1a1a1a;
+}
+.select-large ul {
+  list-style: none;
+  display: none;
+  padding: 0px;margin: 0px;
+}
+.select-dropdown{
+  display: none;
+  position: absolute;
+  background: $white;
+  width: 100%;color: #1a1a1a;
+  border: 1px solid $form-border-color;z-index: 1000;
+}
+.select-large ul li {
+  height:40px;padding-top: 5px;padding-left: 20px;
+}
+.select-large ul li:hover{
+  color: #57a9d9;cursor: pointer;
+}
+.select-large button:focus + .select-dropdown,
+.select-dropdown:hover {
+  display: block;
+}
+.select-large button:focus{
+  color: #1a1a1a;
+}
+.select-large button:after { /* Little arrow */
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -3px;
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #4cbeff transparent;
+}
+//.select-large .divider,
+//.select-large [role="separator"] {
+//  border-top: solid 1px #1a1a1a;
+//  clear: both;
+//  height: 1px;
+//  width: 100%; }
+//.select-large ul li {
+//  background: #333333;
+//}
+.food-desc{
+  overflow: hidden;padding: 4px;
+}
+.food-desc-header {
+  padding: 0;font-size: 14px;font-weight: bold; margin-left:10px; float: left;
+}
+.food-desc-detail {
+  padding: 0;font-size: small;margin-left:10px; float: left;
+}
+.food-desc-price{
+  font-weight: bold;color: #de2d0f;font-size: 14px;margin-left:20px; float: right;
+}
+.item-side-panel{
+  display: table;
+  margin-top: 5px;width: 100%; position: relative;
+}
+.food-image{
+  display: block;
+}
+.food-side{
+  margin-top: 5px;background-color:$white; overflow: hidden;
+  @include box-shadow(0, 3px, 3px, -3px, #777);
+}
+.food-add{
+  display: block;position: relative; overflow: hidden;width: 100%; padding: 5px; margin-left: 60px;
+  .food-add-button{
+    border-radius: 2px;border: 1px solid $form-border-color;float: left; position: relative;overflow: hidden;
+    width: 30px;height: 30px; text-align: center; font-size: 32px;color: $medium-gray;
+    .add-btn{
+      left:-1px;top:-9px; height: 30px; width: 30px;position: absolute;
+    }
+    .ded-btn{
+       left:-1px;top:-26px; height: 30px; width: 30px;position: absolute;
+     }
+  }
+  .food-add-qty{
+    float: left; width: 40px;text-align: center;font-size: 14px; margin-top: 5px;color: #6f6f6f;
+  }
+  .food-add-cart{
+    @extend .button;
+    @extend .radius;
+    @extend .alert;
+    height: 30px;font-size: 13px; padding: 0px 10px 0px 10px; margin-left: 10px; float: left;
+  }
+}
+
+.threedots-vert {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $medium-gray;
+  box-shadow: 10px 0px 0px $medium-gray, 20px 0px 0px $medium-gray;
+}
+.food-select{
+  height: 15px;width: 36px;float: left; margin-left: 24px;padding-top: 10px;
 }

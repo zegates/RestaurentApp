@@ -1,12 +1,11 @@
 <h1>Add Order</h1>
-{{ember-table
-hasFooter=false
-columns=tableColumns
-content=tableContent
-}}
+
+
+
 <div class="row">
     <div class="large-8 columns">
-        <form>
+      {{components/item/list-items}}
+        <!--form>
             <div class="row">
                 <div class="large-12 columns">
                     <label>Input Label
@@ -69,7 +68,7 @@ content=tableContent
                     </label>
                 </div>
             </div>
-        </form>
+        </form-->
     </div>
     <div class="large-4 columns">
       {{components/item/item-sidebar}}
