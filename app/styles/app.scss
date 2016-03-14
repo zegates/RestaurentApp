@@ -1,14 +1,19 @@
 @import 'foundation/settings'; /* import everything */
 
-$topbar-color: #309199;
-
+$topbar-color: #312c32;
 $topbar-bg-color:$topbar-color;
 $off-canvas-bg: $topbar-color;
 $tabbar-bg:$topbar-color;
+
+$typo-offgray:#6f6f6f;
+$typo-gray2:#3b3a36;
+$typo-lightgray:#e3e0cf;
+
 @import 'foundation'; /* import everything */
 @import 'normalize'; /* import everything */
 // And so on...
 /* or just import the bits you need: @import 'foundation/functions'; */
+
 
 @mixin box-shadow($top, $left, $blur, $spread,$color) {
   -webkit-box-shadow:$top $left $blur $spread $color;
@@ -60,18 +65,18 @@ $form-radius: $global-radius;
 }
 
 .list-items{
-  margin: 0px 10px 0px 10px;
+  //margin: 0px 10px 0px 10px;
+  overflow: hidden;
 }
 .list-items .row{
   @include box-shadow(0, 3px, 3px, -3px, #777);
   background: $white;color: #88888A;
   height: 50px;
-  margin-top: 2px;
-
+  margin-bottom: 2px;
 }
 .list-items .row .columns{
-  display: table-cell;
-  vertical-align: middle;
+  //display: table-cell;
+  //vertical-align: middle;
 }
 // dropdown
 .select-large {
@@ -157,16 +162,6 @@ $form-radius: $global-radius;
 }
 .food-add{
   display: block;position: relative; overflow: hidden;width: 100%; padding: 5px; margin-left: 60px;
-  .food-add-button{
-    border-radius: 2px;border: 1px solid $form-border-color;float: left; position: relative;overflow: hidden;
-    width: 30px;height: 30px; text-align: center; font-size: 32px;color: $medium-gray;
-    .add-btn{
-      left:-1px;top:-9px; height: 30px; width: 30px;position: absolute;
-    }
-    .ded-btn{
-       left:-1px;top:-26px; height: 30px; width: 30px;position: absolute;
-     }
-  }
   .food-add-qty{
     float: left; width: 40px;text-align: center;font-size: 14px; margin-top: 5px;color: #6f6f6f;
   }
@@ -175,6 +170,17 @@ $form-radius: $global-radius;
     @extend .radius;
     @extend .alert;
     height: 30px;font-size: 13px; padding: 0px 10px 0px 10px; margin-left: 10px; float: left;
+  }
+}
+
+.control-buttons{
+  border-radius: 2px;border: 1px solid $form-border-color; position: relative;overflow: hidden;
+  width: 30px;height: 30px; text-align: center; font-size: 32px;color: $medium-gray;
+  .add-btn{
+    left:-1px;top:-9px; height: 30px; width: 30px;position: absolute;
+  }
+  .ded-btn{
+    left:-1px;top:-26px; height: 30px; width: 30px;position: absolute;
   }
 }
 
@@ -187,4 +193,36 @@ $form-radius: $global-radius;
 }
 .food-select{
   height: 15px;width: 36px;float: left; margin-left: 24px;padding-top: 10px;
+}
+.parent-container{
+  background-color: $white;
+  padding: 10px;
+  .div-row{
+    position: relative;overflow: hidden;
+    min-height: 50px;
+    margin-top: 2px;
+    .div-column{
+
+    }
+  }
+}
+.order-details{
+  color: $typo-offgray;
+}
+.row-padding {
+  .columns {
+    padding-left:4px;
+    padding-right:4px;
+  }
+}
+.switch-label{
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.content-title{
+  height: 40px;
+  background: $typo-lightgray;
+  .legend{
+    text-align: center;color: $typo-gray2;padding-top: 10px;
+  }
 }

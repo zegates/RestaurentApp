@@ -5,7 +5,8 @@ import cms from 'restaurent-app/namespaces/cmservice';
 export default Ember.Route.extend({
 
   mainWidget:Ember.Object.create({
-    widget: 'empty-view'
+    widget: 'empty-view',
+    title:''
   }),
 
   beforeModel: function() {
@@ -42,8 +43,9 @@ export default Ember.Route.extend({
       }
     },
     setWidget(path) {
-      console.log('main content set widget: '+ path);
-      this.mainWidget.set('widget',path);
+      //console.log('main content set widget: '+ path);
+      this.mainWidget.set('widget',path.widget);
+      this.mainWidget.set('title',path.title);
     }
   }
   //,

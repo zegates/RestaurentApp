@@ -6,8 +6,14 @@ import Ember from 'ember';
 export function initialize(application) {
   var configPath = Ember.Object.extend({
     componentPath: {
-      'order-panel': 'components/order/add-order',
-      'customer-panel':'components/customer/customer-panel'
+      'order-panel': {
+        widget:'components/order/add-order',
+        title:'Add Order'
+      },
+      'customer-panel':{
+        widget:'components/customer/customer-panel',
+        title:'Customer Details'
+      }
     }
   });
 
