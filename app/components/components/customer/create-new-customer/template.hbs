@@ -1,33 +1,73 @@
 <form>
-
-
-<div class="row">
+  <div class="row">
+      <div class="columns">Name</div>
+  </div>
+<div class="row form-line">
     <div class="medium-6 columns">
-        <label>First Name
+        <label>
           {{input value=customer.fname placeholder="First Name"}}
         </label>
     </div>
     <div class="medium-6 columns">
-        <label>Last Name
+        <label>
           {{input value=customer.lname placeholder="Last Name"}}
         </label>
     </div>
 </div>
 <div class="row">
+    <div class="columns">Address</div>
+</div>
+<div class="row form-line">
     <div class="columns">
-        <label>Address
-          {{input value=customer.address placeholder="Address"}}
+        <label>
+          {{input value=customer.address}}
         </label>
     </div>
 </div>
 <div class="row">
+    <div class="columns">Password</div>
+</div>
+<div class="row form-line">
     <div class="columns">
-        <label>Password
-          {{input value=customer.password placeholder="password"}}
+        <label>
+          {{input value=customer.password type="password"}}
         </label>
     </div>
 </div>
 <div class="row">
+    <div class="medium-6 columns">Door No</div>
+    <div class="medium-6 columns">City</div>
+</div>
+<div class="row form-line">
+    <div class="medium-6 columns">
+        <label>
+          {{input value=customer.doorno}}
+        </label>
+    </div>
+    <div class="medium-6 columns">
+        <label>
+          {{input value=customer.city}}
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="medium-6 columns">Postal Code</div>
+    <div class="medium-6 columns">Email</div>
+</div>
+<div class="row form-line">
+    <div class="medium-6 columns">
+        <label>
+          {{input value=customer.postalcode}}
+        </label>
+    </div>
+    <div class="medium-6 columns">
+        <label>
+          {{input value=customer.email}}
+        </label>
+    </div>
+</div>
+
+<div class="row form-line">
     <div class="columns">
         <button class="small button" {{action "addCustomer" customer }}>Add Customer</button>
     </div>

@@ -7,6 +7,7 @@ $tabbar-bg:$topbar-color;
 
 $typo-offgray:#6f6f6f;
 $typo-gray2:#3b3a36;
+$typo-gray3:#bbbbbb;
 $typo-lightgray:#e3e0cf;
 
 @import 'foundation'; /* import everything */
@@ -207,7 +208,10 @@ $form-radius: $global-radius;
   }
 }
 .order-details{
-  color: $typo-offgray;
+  color: $typo-offgray;font-size: 14px;
+  .order-rates{
+    color: $typo-gray3;
+  }
 }
 .row-padding {
   .columns {
@@ -226,3 +230,93 @@ $form-radius: $global-radius;
     text-align: center;color: $typo-gray2;padding-top: 10px;
   }
 }
+.total{
+  color: red; text-align: center;
+  font-size: 26px;
+}
+.button-small{
+  @extend .button;
+  @extend .alert;
+  height: 36px;font-size: 13px; padding: 0px 10px 0px 10px;
+}
+.btn-order-detail{
+  width: 200px; margin: auto;
+  button{
+    width: 200px;
+  }
+}
+
+/** form style**/
+.form-line{
+  margin: 50px auto;
+  //box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  //-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  //-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+//.form-line h2{
+//  background: #4D4D4D;
+//  text-transform: uppercase;
+//  font-family: 'Open Sans Condensed', sans-serif;
+//  color: #797979;
+//  font-size: 18px;
+//  font-weight: 100;
+//  padding: 20px;
+//  margin: -30px -30px 30px -30px;
+//}
+.form-line input[type="text"],
+.form-line input[type="date"],
+.form-line input[type="datetime"],
+.form-line input[type="email"],
+.form-line input[type="number"],
+.form-line input[type="search"],
+.form-line input[type="time"],
+.form-line input[type="url"],
+.form-line input[type="password"],
+.form-line textarea,
+.form-line select
+{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow:  none;
+  background: transparent;
+  margin-bottom: 10px;
+  font: 16px Arial, Helvetica, sans-serif;
+  height: 45px;
+}
+.form-line textarea{
+  resize:none;
+  overflow: hidden;
+}
+.form-line input[type="button"],
+.form-line input[type="submit"]{
+  -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  background-color: #2CBBBB;
+  border: 1px solid #27A0A0;
+  display: inline-block;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+  padding: 8px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.form-line input[type="button"]:hover,
+.form-line input[type="submit"]:hover {
+  background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+  background-color:#34CACA;
+}
+
+/** **/
