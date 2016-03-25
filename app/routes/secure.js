@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import auth from 'restaurent-app/controllers/authentication';
 import cms from 'restaurent-app/namespaces/cmservice';
+import Customer from 'restaurent-app/models/customer';
 
 export default Ember.Route.extend({
 
@@ -20,6 +21,7 @@ export default Ember.Route.extend({
       attr:{
         customer:auth.customer,
         mainWidget:this.mainWidget
+        //customers:this.store.findAll('customer')
       }
     };
   },
@@ -27,19 +29,32 @@ export default Ember.Route.extend({
   actions: {
     addCustomer(customer) {
       console.log(customer.fname+' customer router');
-      if(customer.fname && customer.lname) {
-        let newPost = this.store.createRecord('customer', {
+      if(customer.fname) {
+        let cust = this.store.createRecord('customer', {
+          cid: '2',
           firstName: customer.fname,
           lastName: customer.lname,
           address: customer.address,
           password: customer.password,
           createdDate: new Date()
         });
-        newPost.save();
+        //newPost.save();
+        //let comet = this.get('cometd-service');
+        ////comet.initConnection();
+        //comet.subscribeChannels();
+        //comet.createCustomer(newPost);
+
+        //var cust = Customer.create({
+        //    cid: '2',
+        //    firstName: customer.fname,
+        //    lastName: customer.lname,
+        //    address: customer.address,
+        //    password: customer.password,
+        //    createdDate: new Date()
+        //});
+
         let comet = this.get('cometd-service');
-        //comet.initConnection();
-        comet.subscribeChannels();
-        comet.createCustomer(newPost);
+        comet.createRecord(cust);
       }
     },
     setWidget(path) {

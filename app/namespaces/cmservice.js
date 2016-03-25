@@ -8,6 +8,13 @@ export default Ember.Object.create({
   AuthenticationStatus:{
     SUCCESS:'SUCCESS',
     FAIL:'FAIL'
+  },
+
+  DBStatus:{
+    SUCCESS:'SUCCESS',
+    FAIL:'FAIL',
+    CREATED:'CREATED'
   }
+
 
 });

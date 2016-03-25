@@ -17,6 +17,8 @@ export default Ember.Route.extend({
       this.transitionTo('public');
     }else if(authStatus === cms.AuthenticationStatus.SUCCESS){
       this.transitionTo('secure');
+      let comet = this.get('cometd-service');
+      comet.subscribeChannels();
     }
   },
 
