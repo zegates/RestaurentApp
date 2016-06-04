@@ -13,8 +13,7 @@ export default Ember.Object.create({
   DBStatus:{
     SUCCESS:'SUCCESS',
     FAIL:'FAIL',
-    CREATED:'CREATED'
+    CREATED:'CREATED',
+    FOUND:'FOUND'
   }
-
-
 });

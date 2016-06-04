@@ -21,7 +21,6 @@ export default Ember.Route.extend({
       attr:{
         customer:auth.customer,
         mainWidget:this.mainWidget
-        //customers:this.store.findAll('customer')
       }
     };
   },

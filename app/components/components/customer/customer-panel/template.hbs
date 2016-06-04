@@ -1,14 +1,7 @@
 <h1>Customer</h1>
 <div class="row">
     <div class="small-3 columns">
-
-            <div class="row">
-                <div class="large-12 columns">
-                    <label>Enter Keyword
-                        <input type="text" placeholder="Keyword" />
-                    </label>
-                </div>
-            </div>
+    {{components/customer/find-customers}}
     </div>
     <div class="small-9 columns">
       {{#components/customer/create-new-customer customer=attr.customer addCustomer="addCustomer"}}{{/components/customer/create-new-customer}}

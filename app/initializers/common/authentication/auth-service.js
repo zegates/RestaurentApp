@@ -10,9 +10,8 @@ var authManager  = Ember.Object.extend({
   updateAuthenticationStatus(message){
     auth.set('authStatus', message.data.AUTH_OPERATION);
     if(message.data.customer){
-      auth.set('customer', JSON.parse(message.data.customer));  
+      auth.set('customer', JSON.parse(message.data.customer));
     }
-
     console.log('auth service '+ auth.get('authStatus'));
   }
 

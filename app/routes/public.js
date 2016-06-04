@@ -34,7 +34,6 @@ export default Ember.Route.extend({
   actions: {
     login(customer) {
       console.log(customer.username+' customer login router');
-
       let comet = this.get('cometd-service');
       let auth_service = this.get('auth-service');
       comet.initConnection();
