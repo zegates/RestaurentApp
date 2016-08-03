@@ -4,7 +4,6 @@
 import Ember from 'ember';
 
 let dataManager = Ember.Object.extend({
-
   customerList:[],
   foodCategoryList:[],
   foodCategoryItemsList:[],

@@ -1,8 +1,11 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 import cmservice from 'restaurent-app/namespaces/cmservice';
-import Customer from 'restaurent-app/models/customer';
 import dm from 'restaurent-app/controllers/dataManager';
+import FoodItem from 'restaurent-app/models/FoodItem';
+import FoodCategory from 'restaurent-app/models/FoodCategory';
+import ItemDetail from 'restaurent-app/models/ItemDetail';
+import Metric from 'restaurent-app/models/Metric';
 
 var cometdService  = Ember.Object.extend({
 
@@ -82,9 +85,15 @@ var cometdService  = Ember.Object.extend({
       console.warn('Error in find '+message.data);
     }else if(message.data.DB_OPERATION === cmservice.DBStatus.FOUND){
       console.info('Found Successfully '+JSON.stringify(message.data));
-      var foodCategoryItems= [];
+      var foodCategoryItems = [];
+
       JSON.parse(message.data.foodCategoryItems).forEach(function(foodCategoryItem){
+        var foodItem = FoodItem.create({});
+        $.extend(foodItem,foodCategoryItem);
+        console.log('Extended'+foodItem);
+
         foodCategoryItems.pushObject(foodCategoryItem);
+
       });
       Ember.set(dm, 'foodCategoryItemsList', foodCategoryItems);
     }
@@ -118,7 +127,7 @@ var cometdService  = Ember.Object.extend({
 
   createRecord(record){
     var url = [this.baseURL, record._internalModel.modelName].join('/') + '/create';
-    //TODO: Serrializer not used as it needs snapshots
+    //TODO: Serializer not used as it needs snapshots
     //var data = this._serializer.serialize(record);
     var data = record.serialize();
     this.publishRequest(url, data);
