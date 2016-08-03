@@ -44,7 +44,7 @@ export default Ember.Component.extend({
     },
     addToCartItem(itemPosition){
       var item = this.get('categoryItemList')[itemPosition];
-      console.log(item);
+
       var itemListPrev = Ember.copy(DM.get('addOrderItemList'), true  );
       var itemListNew = [];
       var notFound = true;
@@ -59,10 +59,8 @@ export default Ember.Component.extend({
       if(notFound){
         itemListNew.push(item);
       }
-
-
       DM.set('addOrderItemList', itemListNew);
-      console.log(DM.get('addOrderItemList'));
+      //console.log(DM.get('addOrderItemList'));
     }
 
   }

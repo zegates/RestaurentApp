@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0dfb74-7201-4f12-8fa8-d5cf1c1c986c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/components/order/delivery-details/component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/components/order/delivery-details/template.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/formats.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/models/customer.js" afterPath="$PROJECT_DIR$/app/models/Customer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dataManager.js" afterPath="$PROJECT_DIR$/app/controllers/dataManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js" afterPath="$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/initializers/cometd-service.js" afterPath="$PROJECT_DIR$/app/initializers/cometd-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/secure.js" afterPath="$PROJECT_DIR$/app/routes/secure.js" />
     </list>
     <ignored path="RestaurentApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/app/initializers/cometd-service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -64,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemDetail.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ItemDetail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/ItemDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.18848167">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -114,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="component.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61256546">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -184,15 +178,15 @@
         <option value="$PROJECT_DIR$/app/components/module/main-content/component.js" />
         <option value="$PROJECT_DIR$/app/components/components/item/list-items/template.hbs" />
         <option value="$PROJECT_DIR$/app/components/components/item/list-items/component.js" />
-        <option value="$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js" />
         <option value="$PROJECT_DIR$/app/components/components/item/item-sidebar/template.hbs" />
         <option value="$PROJECT_DIR$/app/models/customer.js" />
         <option value="$PROJECT_DIR$/app/models/Metric.js" />
         <option value="$PROJECT_DIR$/app/models/FoodCategory.js" />
         <option value="$PROJECT_DIR$/app/models/FoodItem.js" />
-        <option value="$PROJECT_DIR$/app/models/ItemDetail.js" />
         <option value="$PROJECT_DIR$/app/controllers/dataManager.js" />
         <option value="$PROJECT_DIR$/app/routes/secure.js" />
+        <option value="$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js" />
+        <option value="$PROJECT_DIR$/app/models/ItemDetail.js" />
         <option value="$PROJECT_DIR$/app/initializers/cometd-service.js" />
       </list>
     </option>
@@ -1312,22 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/FoodCategory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Metric.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/initializers/common/authentication/auth-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1344,6 +1322,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/secure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18848167">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/formats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/namespaces/cmservice.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1352,10 +1346,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/secure.js">
+    <entry file="file://$PROJECT_DIR$/app/models/Metric.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18848167">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/FoodCategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1376,10 +1378,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ItemDetail.js">
+    <entry file="file://$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1387,23 +1389,15 @@
     <entry file="file://$PROJECT_DIR$/app/initializers/cometd-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/formats.js">
+    <entry file="file://$PROJECT_DIR$/app/models/ItemDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/components/item/item-sidebar/component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61256546">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.18848167">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -89,8 +89,21 @@ var cometdService  = Ember.Object.extend({
 
       JSON.parse(message.data.foodCategoryItems).forEach(function(foodCategoryItem){
         var foodItem = FoodItem.create({});
-        $.extend(foodItem,foodCategoryItem);
-        console.log('Extended'+foodItem);
+        var foodCategory = FoodCategory.create({});
+        var metric = Metric.create({});
+        var itemDetail = ItemDetail.create({
+          addedQty:1
+        });
+        $.extend(foodItem, foodCategoryItem);
+        $.extend(foodCategory, foodCategoryItem.foodCategory);
+        $.extend(metric, foodCategoryItem.metric);
+        $.extend(itemDetail, foodCategoryItem);
+
+        console.log('Extended');
+        console.log(foodItem);
+        console.log(metric);
+        console.log(itemDetail);
+        console.log(foodCategory);
 
         foodCategoryItems.pushObject(foodCategoryItem);
 
