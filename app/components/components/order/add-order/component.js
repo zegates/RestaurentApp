@@ -3,6 +3,14 @@ import Ember from 'ember';
 //import {randomNumber, randomDate} from '../utils/random';
 
 export default Ember.Component.extend({
+
+  //addedItemList:[],
+  //model() {
+  //  return {
+  //    addedItems: this.addedItemList
+  //  };
+  //},
+    /*
   //tableColumns: Ember.computed(function() {
   //  var dateColumn = ColumnDefinition.create({
   //    savedWidth: 150,
@@ -59,5 +67,14 @@ export default Ember.Component.extend({
   //  }
   //  return content;
   //})
+  */
+
+  //actions: {
+  //  addToCartItem(item){
+  //    console.log('Add Item LIst: '+item)
+  //    this.get('addedItemList').push(item);
+  //  }
+  //}
+
 
 });

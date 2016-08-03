@@ -2,6 +2,11 @@ import Ember from 'ember';
 import config from './config/environment';
 
 const Router = Ember.Router.extend({
+  intl: Ember.inject.service('intl'),
+  beforeModel(transition) {
+    return this.get('intl').setLocale('en-us');
+  },
+
   location: config.locationType
 });
 

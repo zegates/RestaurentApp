@@ -5,10 +5,15 @@
         <div class="small-2 columns">Price</div>
         <div class="small-2 columns">Sub Total</div>
     </div>
-    <div class="row">
-        <div class="small-6 columns">Cheese Macaroni</div>
-        <div class="small-2 columns">1</div>
-        <div class="small-2 columns">LKR 200.00</div>
-        <div class="small-2 columns">LKR 200.00</div>
-    </div>
+
+
+  {{#each addedItems as |item|}}
+      <div class="row">
+          <div class="small-6 columns">{{item.itemName}}</div>
+          <div class="small-2 columns">{{formatNumber item.remainingQty}}</div>
+          <div class="small-2 columns">LKR 200.00</div>
+          <div class="small-2 columns">LKR 200.00</div>
+      </div>
+  {{/each}}
+
 </div>

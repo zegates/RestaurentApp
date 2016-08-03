@@ -6,8 +6,9 @@ import Ember from 'ember';
 let dataManager = Ember.Object.extend({
 
   customerList:[],
-  foodCategory:[]
-
+  foodCategoryList:[],
+  foodCategoryItemsList:[],
+  addOrderItemList:[]
 });
 
 export default dataManager.create({});

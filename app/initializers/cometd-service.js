@@ -34,8 +34,12 @@ var cometdService  = Ember.Object.extend({
       self.findCustomerCallBack(message);
     });
 
-    this._cometd.subscribe("/cms/foodcategory/find/result", function(message){
+    this._cometd.subscribe("/cms/foodcategories/result", function(message){
       self.findFoodCategoryCallBack(message);
+    });
+
+    this._cometd.subscribe("/cms/fooditem/findforcatname/result", function(message){
+      self.findFoodCategoryItemsCallBack(message);
     });
   },
 
@@ -52,7 +56,7 @@ var cometdService  = Ember.Object.extend({
       console.warn('Error in find '+message.data);
     }else if(message.data.DB_OPERATION === cmservice.DBStatus.FOUND){
       console.info('Found Successfully '+JSON.stringify(message.data));
-      var customers= [];
+      var customers = [];
       JSON.parse(message.data.customers).forEach(function(cust){
         customers.pushObject(cust);
       });
@@ -65,13 +69,38 @@ var cometdService  = Ember.Object.extend({
       console.warn('Error in find '+message.data);
     }else if(message.data.DB_OPERATION === cmservice.DBStatus.FOUND){
       console.info('Found Successfully '+JSON.stringify(message.data));
-      var customers= [];
-      JSON.parse(message.data.customers).forEach(function(cust){
-        customers.pushObject(cust);
+      var foodCategories= [];
+      JSON.parse(message.data.foodCategories).forEach(function(foodCategory){
+        foodCategories.pushObject(foodCategory.foodCatName);
       });
-      Ember.set(dm, 'customerList', customers);
+      Ember.set(dm, 'foodCategoryList', foodCategories);
     }
   },
+
+  findFoodCategoryItemsCallBack(message){
+    if(message.data.DB_OPERATION === cmservice.DBStatus.FAIL){
+      console.warn('Error in find '+message.data);
+    }else if(message.data.DB_OPERATION === cmservice.DBStatus.FOUND){
+      console.info('Found Successfully '+JSON.stringify(message.data));
+      var foodCategoryItems= [];
+      JSON.parse(message.data.foodCategoryItems).forEach(function(foodCategoryItem){
+        foodCategoryItems.pushObject(foodCategoryItem);
+      });
+      Ember.set(dm, 'foodCategoryItemsList', foodCategoryItems);
+    }
+  },
+
+
+  findFoodItemsForCategory(foodCatID){
+    this._cometd.publish("/cms/fooditem/findforcatname", {
+      'foodCatID':foodCatID
+    });
+  },
+
+  findFoodCategory(){
+    this._cometd.publish("/cms/foodcategories", {});
+  },
+
 
   subscribeAuthChannels(authStatusCallBack){
     this._cometd.subscribe("/cms/authenticate/status", function(message){
@@ -103,7 +132,7 @@ var cometdService  = Ember.Object.extend({
   },
 
   findForList(entity){
-    var url = [this.baseURL, entity._internalModel.modelName].join('/') + '/find'
+    var url = [this.baseURL, entity._internalModel.modelName].join('/') + '/find';
     this.publishRequest(url, entity.serialize());
   },
 

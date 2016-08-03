@@ -8,38 +8,26 @@
 </section>
 
 <div class="item-side-panel">
-  <article class="food-side">
-      <div class="food-desc">
-        <div class="th food-image left">
-            <img src="img/rice.jpg" width="50px"/>
-        </div>
-        <div class="food-desc-price">LKR 120.00</div>
-        <div class="food-desc-header">White Rice</div>
-        <div class="food-desc-detail">BDConf - Washington, DC</div>
-      </div>
-      <div class="food-add">
-          <div class="control-buttons left"><div class="add-btn">+</div></div>
-          <div class="food-add-qty">10</div>
-          <div class="control-buttons left"><div class="ded-btn">_</div></div>
-          <button class="food-add-cart">Add to Cart</button>
-          <div class="food-select"><div class="threedots-vert"></div></div>
-      </div>
-  </article>
-    <article class="food-side">
-        <div class="food-desc">
-            <div class="th food-image left">
-                <img src="img/rice.jpg" width="50px"/>
-            </div>
-            <div class="food-desc-price">LKR 120.00</div>
-            <div class="food-desc-header">White Rice</div>
-            <div class="food-desc-detail">BDConf - Washington, DC</div>
-        </div>
-        <div class="food-add">
-            <div class="control-buttons left"><div class="add-btn">+</div></div>
-            <div class="food-add-qty">10</div>
-            <div class="control-buttons left"><div class="ded-btn">_</div></div>
-            <button class="food-add-cart">Add to Cart</button>
-            <div class="food-select"><div class="threedots-vert"></div></div>
-        </div>
-    </article>
+  {{#each categoryItemList as |catItem indx|}}
+      <article class="food-side">
+          <div class="food-desc">
+              <div class="th food-image left">
+                  <img src="img/rice.jpg" width="50px"/>
+              </div>
+              <div class="food-desc-price">{{formatNumber catItem.sellingPrice style="currency" currency="LKR"}}</div>
+              <div class="food-desc-header">{{catItem.itemName}}</div>
+              <div>&nbsp;</div>
+              <div class="food-desc-detail">{{catItem.description}}</div>
+          </div>
+          <div class="food-add">
+              <div class="control-buttons left"><div class="add-btn">+</div></div>
+              <div class="food-add-qty">1</div>
+              <div class="control-buttons left"><div class="ded-btn">_</div></div>
+              <div class="food-add-qty">{{formatNumber catItem.remainingQty}}</div>
+              <button class="food-add-cart" {{action "addToCartItem" indx}} >Add to Cart</button>
+              <div class="food-select"><div class="threedots-vert"></div></div>
+          </div>
+      </article>
+  {{/each}}
+
 </div>
