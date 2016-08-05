@@ -15,14 +15,14 @@
                   <img src="img/rice.jpg" width="50px"/>
               </div>
               <div class="food-desc-price">{{formatNumber catItem.sellingPrice style="currency" currency="LKR"}}</div>
-              <div class="food-desc-header">{{catItem.itemName}}</div>
+              <div class="food-desc-header">{{catItem.foodItem.itemName}}</div>
               <div>&nbsp;</div>
-              <div class="food-desc-detail">{{catItem.description}}</div>
+              <div class="food-desc-detail">{{catItem.foodItem.description}}</div>
           </div>
           <div class="food-add">
-              <div class="control-buttons left"><div class="add-btn">+</div></div>
-              <div class="food-add-qty">1</div>
-              <div class="control-buttons left"><div class="ded-btn">_</div></div>
+              <div class="control-buttons left"><div class="add-btn" {{action "addQtyChange" indx "add"}}>+</div></div>
+              <div class="food-add-qty">{{formatNumber catItem.addedQty}}</div>
+              <div class="control-buttons left"><div class="ded-btn" {{action "addQtyChange" indx "ded"}}>_</div></div>
               <div class="food-add-qty">{{formatNumber catItem.remainingQty}}</div>
               <button class="food-add-cart" {{action "addToCartItem" indx}} >Add to Cart</button>
               <div class="food-select"><div class="threedots-vert"></div></div>

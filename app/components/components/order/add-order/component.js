@@ -4,12 +4,16 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  //addedItemList:[],
-  //model() {
-  //  return {
-  //    addedItems: this.addedItemList
-  //  };
-  //},
+  leftWidget:Ember.Object.create({
+    widget: 'components/item/list-items',
+    title:''
+  }),
+
+  model() {
+    return {
+      addedItems: this.leftWidget
+    };
+  },
     /*
   //tableColumns: Ember.computed(function() {
   //  var dateColumn = ColumnDefinition.create({
@@ -69,12 +73,13 @@ export default Ember.Component.extend({
   //})
   */
 
-  //actions: {
-  //  addToCartItem(item){
-  //    console.log('Add Item LIst: '+item)
-  //    this.get('addedItemList').push(item);
-  //  }
-  //}
+  actions: {
+    changeLeftWidget(path){
+      console.log('Triggered add order');
+      this.leftWidget.set('widget',path.widget);
+      this.leftWidget.set('title',path.title);
+    }
+  }
 
 
 });

@@ -183,6 +183,9 @@ $form-radius: $global-radius;
   .ded-btn{
     left:-1px;top:-26px; height: 30px; width: 30px;position: absolute;
   }
+  :hover{
+    cursor: pointer;
+  }
 }
 
 .threedots-vert {

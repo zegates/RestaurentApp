@@ -1,6 +1,6 @@
 <section class="order-details parent-container">
   <div class="div-row">
-      <span>Customer</span><div class="control-buttons right"><div class="add-btn">+</div></div>
+      <span>Customer</span><div class="control-buttons right"><div class="add-btn" {{action "changeLeftWidget" "search-customer"}}>+</div></div>
   </div>
   <div class="div-row">
       <span>Table</span><div class="control-buttons right"><div class="add-btn">+</div></div>
@@ -37,7 +37,7 @@
     </div>
     <div class="div-row">
         <div>Total</div>
-        <div class="total">LKR 224.00</div>
+        <div class="total">{{formatNumber total style="currency" currency="LKR"}}</div>
     </div>
     <div class="div-row">
         <div class="btn-order-detail"><button class="button-small">Send Order</button></div>

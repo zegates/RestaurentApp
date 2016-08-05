@@ -2,7 +2,7 @@ import Ember from 'ember';
 import auth from 'restaurent-app/controllers/authentication';
 import DM from 'restaurent-app/controllers/dataManager';
 import cms from 'restaurent-app/namespaces/cmservice';
-import Customer from 'restaurent-app/models/Customer';
+import Customer from 'restaurent-app/models/customer';
 
 export default Ember.Route.extend({
   intl: Ember.inject.service('intl'),

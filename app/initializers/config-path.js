@@ -13,6 +13,10 @@ export function initialize(application) {
       'customer-panel':{
         widget:'components/customer/customer-panel',
         title:'Customer Details'
+      },
+      'search-customer':{
+        widget:'components/customer/search-customer/',
+        title:'Order Panel Customer Details'
       }
     }
   });

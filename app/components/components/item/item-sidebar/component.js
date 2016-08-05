@@ -44,23 +44,39 @@ export default Ember.Component.extend({
     },
     addToCartItem(itemPosition){
       var item = this.get('categoryItemList')[itemPosition];
-
-      var itemListPrev = Ember.copy(DM.get('addOrderItemList'), true  );
+      var itemListPrev = DM.get('addOrderItemList');//Ember.copy(DM.get('addOrderItemList'), true);
       var itemListNew = [];
       var notFound = true;
+
       itemListPrev.forEach(function(itemExisting){
-        if(itemExisting.fcid == item.fcid){
-          itemExisting.remainingQty += item.remainingQty
+        if(itemExisting.sdid === item.sdid){
+          if(item.remainingQty < itemExisting.addedQty + item.addedQty){
+            Ember.set(itemExisting, 'addedQty', itemExisting.remainingQty);
+          }else{
+            Ember.set(itemExisting, 'addedQty', itemExisting.addedQty + item.addedQty);
+          }
           notFound = false;
         }
         itemListNew.push(itemExisting);
       });
 
       if(notFound){
-        itemListNew.push(item);
+        var itemAdding = jQuery.extend(true, {}, item);
+        itemListNew.push(itemAdding);
       }
       DM.set('addOrderItemList', itemListNew);
-      //console.log(DM.get('addOrderItemList'));
+    },
+    addQtyChange(itemPosition, method){
+      var item = this.get('categoryItemList')[itemPosition];
+      if(method ==="add"){
+        if(item.addedQty + 1 <= item.remainingQty) {
+          Ember.set(item, 'addedQty', item.addedQty + 1);
+        }
+      }else{
+        if(item.addedQty - 1 > 0){
+          Ember.set(item, 'addedQty', item.addedQty - 1);
+        }
+      }
     }
 
   }

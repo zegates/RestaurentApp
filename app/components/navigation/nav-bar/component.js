@@ -9,7 +9,7 @@ export default Ember.Component.extend({
       let orderPanelPath = this.get('config-path').componentPath[path];
       this.sendAction('setWidget', orderPanelPath);
       //console.log(path);
-    }
+    },
   }
 
 });

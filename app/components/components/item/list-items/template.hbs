@@ -1,18 +1,18 @@
 <div class="list-items">
     <div class="row">
         <div class="small-6 columns">Item</div>
-        <div class="small-2 columns">Quantity</div>
+        <div class="small-1 columns">Qty</div>
         <div class="small-2 columns">Price</div>
-        <div class="small-2 columns">Sub Total</div>
+        <div class="small-3 columns">Sub Total</div>
     </div>
 
 
-  {{#each addedItems as |item|}}
+  {{#each addedItems as |itemDetail|}}
       <div class="row">
-          <div class="small-6 columns">{{item.itemName}}</div>
-          <div class="small-2 columns">{{formatNumber item.remainingQty}}</div>
-          <div class="small-2 columns">LKR 200.00</div>
-          <div class="small-2 columns">LKR 200.00</div>
+          <div class="small-6 columns">{{itemDetail.item.itemName}}</div>
+          <div class="small-1 columns">{{formatNumber itemDetail.addedQty}}</div>
+          <div class="small-2 columns">{{formatNumber itemDetail.sellingPrice style="currency" currency="LKR"}}</div>
+          <div class="small-3 columns">{{formatNumber (utilMultiply itemDetail.sellingPrice itemDetail.addedQty) style="currency" currency="LKR"}}</div>
       </div>
   {{/each}}
 

@@ -94,18 +94,21 @@ var cometdService  = Ember.Object.extend({
         var itemDetail = ItemDetail.create({
           addedQty:1
         });
-        $.extend(foodItem, foodCategoryItem);
-        $.extend(foodCategory, foodCategoryItem.foodCategory);
-        $.extend(metric, foodCategoryItem.metric);
+        $.extend(foodItem, foodCategoryItem.item);
+        $.extend(foodCategory, foodCategoryItem.item.foodCategory);
+        $.extend(metric, foodCategoryItem.item.metric);
         $.extend(itemDetail, foodCategoryItem);
 
-        console.log('Extended');
-        console.log(foodItem);
-        console.log(metric);
-        console.log(itemDetail);
-        console.log(foodCategory);
+        foodItem.set('foodCategory', foodCategory);
+        foodItem.set('metric', metric);
+        itemDetail.set('foodItem',foodItem);
+        //console.log('Extended');
+        //console.log(foodItem);
+        //console.log(metric);
+        //console.log(itemDetail);
+        //console.log(foodCategory);
 
-        foodCategoryItems.pushObject(foodCategoryItem);
+        foodCategoryItems.pushObject(itemDetail);
 
       });
       Ember.set(dm, 'foodCategoryItemsList', foodCategoryItems);
