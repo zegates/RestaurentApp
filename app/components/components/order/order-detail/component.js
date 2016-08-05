@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   addedItems:[],
   total:0.0,
   changeWidget: 'changeLeftWidget',
+  customerSign:'+',
 
   didInsertElement() {
     this._super();
@@ -23,8 +24,15 @@ export default Ember.Component.extend({
 
   actions: {
     changeLeftWidget(path){
-      let orderPanelPath = this.get('config-path').componentPath[path];
-      this.sendAction('changeWidget', orderPanelPath);
+      if(this.customerSign === '+') {
+        let orderPanelPath = this.get('config-path').componentPath[path];
+        this.sendAction('changeWidget', orderPanelPath);
+        Ember.set(this, 'customerSign', '-');
+      }else{
+        let orderPanelPath = this.get('config-path').componentPath['order-detail'];
+        this.sendAction('changeWidget', orderPanelPath);
+        Ember.set(this, 'customerSign', '+');
+      }
     }
   }
 

@@ -102,11 +102,11 @@ var cometdService  = Ember.Object.extend({
         foodItem.set('foodCategory', foodCategory);
         foodItem.set('metric', metric);
         itemDetail.set('foodItem',foodItem);
-        //console.log('Extended');
-        //console.log(foodItem);
-        //console.log(metric);
-        //console.log(itemDetail);
-        //console.log(foodCategory);
+        console.log('Extended');
+        console.log(foodItem);
+        console.log(metric);
+        console.log(itemDetail);
+        console.log(foodCategory);
 
         foodCategoryItems.pushObject(itemDetail);
 

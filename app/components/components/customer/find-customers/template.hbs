@@ -1,12 +1,20 @@
 <div class="row">
     <div class="large-12 columns">
-        <label>Enter Keyword
-          {{input value=searchValue}}
+        <label>
+          {{input value=searchValue placeholder="Search Customer"}}
         </label>
+    </div>
+    <div class="large-12 columns">
       {{#each listCustomer as |cust|}}
+      <div class="cust-sect-wrap"{{action "setCustomer" cust}}>
           <div class="cust-sect">
             {{cust.fname}}
           </div>
+          <div class="cust-sect-no">
+            {{cust.telephone}}
+          </div>
+        </div>
       {{/each}}
     </div>
+
 </div>

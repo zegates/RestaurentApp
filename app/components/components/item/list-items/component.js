@@ -7,9 +7,14 @@ export default Ember.Component.extend({
   didInsertElement() {
     this._super();
     var self = this;
-    DM.addObserver('addOrderItemList', function() {
+    DM.addObserver('listItemObsv','addOrderItemList', function() {
       console.log("Order Items observer");
       Ember.set(self, 'addedItems', this.get('addOrderItemList'));
     });
+    Ember.set(self, 'addedItems', DM.get('addOrderItemList'));
   },
+
+  willDestroyElement() {
+    DM.removeObserver('listItemObsv','addOrderItemList',function(){});
+  }
 });

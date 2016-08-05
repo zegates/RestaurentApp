@@ -5,21 +5,20 @@ import DM from 'restaurent-app/controllers/dataManager';
 export default Ember.Component.extend({
 
   store: Ember.inject.service('store'),
-  searchValue: "Search",
+  searchValue: "",
   listCustomer: [],
+  setFoundCustomer:'setFoundCustomer',
 
-  //didInsertElement() {
-  //  this._super();
-  //  var self = this;
-  //
-  //},
+  customerListObsv: function(outer){
+    Ember.set(this, 'listCustomer', outer.get('customerList'));
+  },
 
   init(){
     this._super();
     let self = this;
     DM.addObserver('customerList', function() {
       console.log("observer");
-      Ember.set(self, 'listCustomer', this.get('customerList'));
+      self.customerListObsv(this);
     });
   },
 
@@ -30,11 +29,21 @@ export default Ember.Component.extend({
       fname: this.searchValue,
       lname: ""
     });
-
     comet.findForList(cust);
-
   }),
 
+  actions:{
+    setCustomer(customer){
+      this.sendAction('setFoundCustomer', customer);
+    }
+  },
+
+  willDestroyElement() {
+    DM.removeObserver('customerList',function() {
+      console.log("observer");
+      self.customerListObsv(this);
+    });
+  }
 
 
 });

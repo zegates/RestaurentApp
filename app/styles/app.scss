@@ -321,8 +321,15 @@ $form-radius: $global-radius;
   background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
   background-color:#34CACA;
 }
-.cust-sect{
+.cust-sect-wrap{
   height: 60px;
+}
+.cust-sect{
+
+}
+.cust-sect-no{
+  color: $typo-gray3;
+  font-size: 13px;
 }
 
 /** **/

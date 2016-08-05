@@ -15,7 +15,11 @@ export function initialize(application) {
         title:'Customer Details'
       },
       'search-customer':{
-        widget:'components/customer/search-customer/',
+        widget:'components/customer/search-customer',
+        title:'Order Panel Customer Details'
+      },
+      'order-detail':{
+        widget:'components/item/list-items',
         title:'Order Panel Customer Details'
       }
     }
