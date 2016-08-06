@@ -17,7 +17,6 @@ export default Ember.Component.extend({
     this._super();
     let self = this;
     DM.addObserver('customerList', function() {
-      console.log("observer");
       self.customerListObsv(this);
     });
   },
@@ -40,10 +39,7 @@ export default Ember.Component.extend({
 
   willDestroyElement() {
     DM.removeObserver('customerList',function() {
-      console.log("observer");
       self.customerListObsv(this);
     });
   }
-
-
 });

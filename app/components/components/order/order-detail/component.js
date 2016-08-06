@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   customerSign:'+',
 
   didInsertElement() {
-    this._super();
+    this._super(...arguments);
     var self = this;
     DM.addObserver('addOrderItemList', function() {
       var itemList = this.get('addOrderItemList');
@@ -34,6 +34,9 @@ export default Ember.Component.extend({
         Ember.set(this, 'customerSign', '+');
       }
     }
-  }
+  },
+
+
+
 
 });
