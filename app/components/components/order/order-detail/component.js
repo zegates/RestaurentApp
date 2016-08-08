@@ -33,10 +33,13 @@ export default Ember.Component.extend({
         this.sendAction('changeWidget', orderPanelPath);
         Ember.set(this, 'customerSign', '+');
       }
+    },
+
+    checkoutOrder(orderedCustomer){
+      alert(orderedCustomer.fname);
+      if(orderedCustomer.fname){
+        this.sendAction('checkoutOrder', orderedCustomer);
+      }
     }
-  },
-
-
-
-
+  }
 });

@@ -21,6 +21,10 @@ export function initialize(application) {
       'order-detail':{
         widget:'components/item/list-items',
         title:'Order Panel Customer Details'
+      },
+      'print-order':{
+        widget:'components/print/print-order',
+        title:'Order Panel Customer Details'
       }
     }
   });
@@ -28,7 +32,7 @@ export function initialize(application) {
   //container.typeInjection('component');
   application.register('config-path:variables', configPath, {singleton: true});
   application.inject('component', 'config-path', 'config-path:variables');
-
+  application.inject('route', 'config-path', 'config-path:variables');
 }
 
 export default {

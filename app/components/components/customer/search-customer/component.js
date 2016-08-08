@@ -6,7 +6,11 @@ export default Ember.Component.extend({
 
   actions:{
     setFoundCustomer(customer){
-      Ember.set(this, 'customer', customer)
+      Ember.set(this, 'customer', customer);
+      this.sendAction('addOrderedCustomer', '');
+    },
+    addOrderedCustomer(customer){
+      this.sendAction('addOrderedCustomer', customer);
     }
   }
 

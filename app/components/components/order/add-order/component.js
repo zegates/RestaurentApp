@@ -3,10 +3,17 @@ import Ember from 'ember';
 //import {randomNumber, randomDate} from '../utils/random';
 
 export default Ember.Component.extend({
+  printService: Ember.inject.service('print-service'),
 
-  leftWidget:Ember.Object.create({
+  leftWidget: Ember.Object.create({
     widget: 'components/item/list-items',
     title:''
+  }),
+
+  checkoutOrder:'checkoutOrder',
+
+  orderedCustomer: Ember.Object.create({
+    customer:''
   }),
 
   model() {
@@ -76,8 +83,21 @@ export default Ember.Component.extend({
   actions: {
     changeLeftWidget(path){
       console.log('Triggered add order');
-      this.leftWidget.set('widget',path.widget);
-      this.leftWidget.set('title',path.title);
+      this.leftWidget.set('widget', path.widget);
+      this.leftWidget.set('title', path.title);
+    },
+    addOrderedCustomer(customer){
+      Ember.set(this.orderedCustomer, 'customer',customer);
+    },
+
+    checkoutOrder(orderedCustomer){
+      let doc = this.get('printService').addOrderBill(orderedCustomer);
+      //doc.save('table.pdf');
+      let win = window.open(doc.output('datauristring'));
+      win.print();
+      //win.close();
+
+
     }
   }
 

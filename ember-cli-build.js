@@ -13,6 +13,8 @@ module.exports = function(defaults) {
 
   app.import('bower_components/foundation/js/foundation.js');
   app.import('bower_components/foundation/js/foundation/foundation.offcanvas.js');
+  app.import('bower_components/jspdf/dist/jspdf.min.js');
+  app.import('bower_components/jspdf-autotable/dist/jspdf.plugin.autotable.js');
   app.import("bower_components/ember-localstorage-adapter/localstorage_adapter.js");
   app.import('vendor/cometd.js');
   app.import('vendor/jquery.cometd.js');

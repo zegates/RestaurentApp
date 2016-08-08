@@ -2,7 +2,12 @@
   <div class="div-row">
       <div class="control-group">
           <label class="control control--checkbox">
+          {{#if orderedCustomer.fname}}
+             <input type="checkbox" checked="true"/>
+          {{else}}
               <input type="checkbox"/>
+          {{/if}}
+
               <div class="control__indicator"></div>
           </label>
       </div>
@@ -55,6 +60,6 @@
         <div class="btn-order-detail"><button class="button-small">Send Order</button></div>
     </div>
     <div class="div-row">
-        <div class="btn-order-detail"><button class="button-small">Checkout</button></div>
+        <div class="btn-order-detail"><button class="button-small"{{action "checkoutOrder" orderedCustomer}}>Checkout</button></div>
     </div>
 </section>

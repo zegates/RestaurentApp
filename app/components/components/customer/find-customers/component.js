@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   },
 
   init(){
-    this._super();
+    this._super(...arguments);
     let self = this;
     DM.addObserver('customerList', function() {
       self.customerListObsv(this);
@@ -22,23 +22,34 @@ export default Ember.Component.extend({
   },
 
 
-  searchCustomer:Ember.observer('searchValue', function(){
-    var comet = this.get('cometd-service');
-    let cust = this.get('store').createRecord('customer', {
-      fname: this.searchValue,
-      lname: ""
-    });
-    comet.findForList(cust);
-  }),
+  //searchCustomer:Ember.observer('searchValue', function(){
+  //
+  //}),
 
   actions:{
     setCustomer(customer){
       this.sendAction('setFoundCustomer', customer);
+    },
+
+    searchInput(txtValue){
+      var comet = this.get('cometd-service');
+      if(txtValue.length > 0) {
+        let cust = this.get('store').createRecord('customer', {
+          fname: txtValue,
+          lname: ""
+        });
+        comet.findForList(cust);
+      }else{
+        Ember.set(this, 'searchValue', '');
+        Ember.set(this, 'listCustomer', []);
+      }
+      this.sendAction('setFoundCustomer', '');
     }
   },
 
   willDestroyElement() {
-    DM.removeObserver('customerList',function() {
+    this._super(...arguments);
+    DM.removeObserver('customerList', function() {
       self.customerListObsv(this);
     });
   }

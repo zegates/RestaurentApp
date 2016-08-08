@@ -77,9 +77,9 @@
     <div class="row form-line">
         <div class="columns">
             {{#if customer.fname}}
-                <button class="small button" {{action "addCustomer" customer }}>Add Customer</button>
+                <button class="small button" {{action "addOrderedCustomer" customer}}>Add Customer</button>
             {{else}}
-                <button class="small button alert" {{action "addCustomer" customer }}>New Customer</button>
+                <button class="small button alert" {{action "newCustomer" customer }}>New Customer</button>
             {{/if}}
         </div>
     </div>

@@ -12,7 +12,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('public');
-  this.route('secure');
+  this.route('secure', function() {
+    this.route('print', {
+      path: 'print/:print_id'
+    });
+  });
 });
 
 export default Router;

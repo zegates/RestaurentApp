@@ -15,12 +15,16 @@ export default Ember.Route.extend({
   }),
 
   beforeModel: function() {
-    if(auth.authStatus === cms.AuthenticationStatus.FAIL){
+    let fromUrl = this.get('router.url');
+    if(~fromUrl.indexOf('print')){
+
+    }else if(auth.authStatus === cms.AuthenticationStatus.FAIL){
       this.transitionTo('public');
     }
+
   },
 
-  model() {
+  model(params) {
     return {
       attr:{
         customer:auth.customer,
