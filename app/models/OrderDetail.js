@@ -3,15 +3,11 @@
  */
 import Ember from 'ember';
 
-export default Ember.Object.extend({
-  oid: '',
-  address: '',
-  dateAdded: '',
-  discount: '',
-  paid: '',
-  timeAdded: '',
-  total: '',
-  tpNo: '',
-  customer: ''
-
+export default Ember.Object.extend(Ember.Copyable,{
+  modelName:'OrderDetail',
+  odid: '',
+  customerOrder: '',
+  stockDetail: '',
+  qty: '',
+  sellingPrice: ''
 });

@@ -4,6 +4,7 @@
 import Ember from 'ember';
 
 export default Ember.Object.extend(Ember.Copyable, {
+  modelName:'StockItemDetail',
   sdid:'',
   item:'',
   stockOrder:'',
@@ -13,6 +14,7 @@ export default Ember.Object.extend(Ember.Copyable, {
   sellingPriceForeign:'',
   isSelling:'',
   isFinite:'',
-  remainingQty:''
+  remainingQty:'',
+  addedQty:''
 });
 

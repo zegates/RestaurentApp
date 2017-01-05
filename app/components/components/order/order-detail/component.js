@@ -3,7 +3,7 @@ import DM from 'restaurent-app/controllers/dataManager';
 
 export default Ember.Component.extend({
   addedItems:[],
-  total:0.0,
+  total: 0.0,
   changeWidget: 'changeLeftWidget',
   customerSign:'+',
 
@@ -20,6 +20,8 @@ export default Ember.Component.extend({
       });
       Ember.set(self, 'total', total);
     });
+    this.$().foundation();
+    $('#confirmOrder').foundation('reveal', 'close');
   },
 
   actions: {
@@ -36,10 +38,12 @@ export default Ember.Component.extend({
     },
 
     checkoutOrder(orderedCustomer){
-      alert(orderedCustomer.fname);
+      //alert(orderedCustomer.fname);
+      $('#confirmOrder').foundation('reveal', 'open');
       if(orderedCustomer.fname){
         this.sendAction('checkoutOrder', orderedCustomer);
       }
+
     }
   }
 });

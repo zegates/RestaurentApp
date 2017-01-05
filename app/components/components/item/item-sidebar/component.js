@@ -61,7 +61,7 @@ export default Ember.Component.extend({
       });
 
       if(notFound){
-        var itemAdding = jQuery.extend(true, {}, item);
+        var itemAdding = Ember.copy(item, true);//jQuery.extend(true, {}, item);
         itemListNew.push(itemAdding);
       }
       DM.set('addOrderItemList', itemListNew);

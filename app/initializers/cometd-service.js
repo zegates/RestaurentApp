@@ -44,6 +44,10 @@ var cometdService  = Ember.Object.extend({
     this._cometd.subscribe("/cms/fooditem/findforcatname/result", function(message){
       self.findFoodCategoryItemsCallBack(message);
     });
+    this._cometd.subscribe("/cms/customerorder/create/result", function(message){
+      self.createRecordCallBack(message);
+      //self.createCustomerOrderCallBack(message);
+    });
   },
 
   createRecordCallBack(message){
@@ -75,6 +79,9 @@ var cometdService  = Ember.Object.extend({
       var foodCategories= [];
       JSON.parse(message.data.foodCategories).forEach(function(foodCategory){
         foodCategories.pushObject(foodCategory.foodCatName);
+
+
+
       });
       Ember.set(dm, 'foodCategoryList', foodCategories);
     }
@@ -98,10 +105,11 @@ var cometdService  = Ember.Object.extend({
         $.extend(foodCategory, foodCategoryItem.item.foodCategory);
         $.extend(metric, foodCategoryItem.item.metric);
         $.extend(itemDetail, foodCategoryItem);
+        delete itemDetail.item;
 
         foodItem.set('foodCategory', foodCategory);
         foodItem.set('metric', metric);
-        itemDetail.set('foodItem',foodItem);
+        itemDetail.set('foodItem', foodItem);
         //console.log('Extended');
         //console.log(foodItem);
         //console.log(metric);
@@ -149,6 +157,14 @@ var cometdService  = Ember.Object.extend({
     this.publishRequest(url, data);
   },
 
+  createJsonRecord(record){
+    var url = [this.baseURL, record.modelName.toLowerCase()].join('/') + '/create';
+    //TODO: Serializer not used as it needs snapshots
+    //var data = this._serializer.serialize(record);
+    var data = JSON.stringify(record);
+    console.log('Create Record'+ data);
+    this.publishRequest(url, data);
+  },
   find(entity){
     this._cometd.publish("/cms/"+entity+"/find", {
       username: entity.username,
@@ -171,6 +187,7 @@ export function initialize(application) {
   application.register('cometd-service:variables', cometdService, {singleton: true});
   application.inject('component', 'cometd-service', 'cometd-service:variables');
   application.inject('route', 'cometd-service', 'cometd-service:variables');
+  application.inject('service', 'cometd-service', 'cometd-service:variables');
 }
 
 export default {

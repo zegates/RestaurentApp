@@ -1,15 +1,17 @@
 import Ember from 'ember';
+
 //import ColumnDefinition from 'ember-table/models/column-definition';
 //import {randomNumber, randomDate} from '../utils/random';
 
 export default Ember.Component.extend({
   printService: Ember.inject.service('print-service'),
+  orderService: Ember.inject.service('order-service'),
+
 
   leftWidget: Ember.Object.create({
     widget: 'components/item/list-items',
     title:''
   }),
-
   checkoutOrder:'checkoutOrder',
 
   orderedCustomer: Ember.Object.create({
@@ -91,12 +93,17 @@ export default Ember.Component.extend({
     },
 
     checkoutOrder(orderedCustomer){
+      let comet = this.get('cometd-service');
+      //comet.addCustomerOrder(orderedCustomer);
+
+
+      this.get("orderService").addCustomerOrder(orderedCustomer);
       let doc = this.get('printService').addOrderBill(orderedCustomer);
       //doc.save('table.pdf');
+
       let win = window.open(doc.output('datauristring'));
       win.print();
       //win.close();
-
 
     }
   }

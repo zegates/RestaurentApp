@@ -3,7 +3,8 @@
  */
 import Ember from 'ember';
 
-export default Ember.Object.extend({
+export default Ember.Object.extend(Ember.Copyable,{
+  modelName:'CustomerOrder',
   oid: '',
   address: '',
   dateAdded: '',
@@ -12,7 +13,7 @@ export default Ember.Object.extend({
   timeAdded: '',
   total: '',
   tpNo: '',
-  customer: ''
-
+  customer: '',
+  orderDetails:[]
 });
 
