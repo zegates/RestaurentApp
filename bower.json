@@ -15,7 +15,8 @@
     "ember-localstorage-adapter": "~0.5.5",
     "jquery-mousewheel": "~3.1.4",
     "ember-data": "2.3.0",
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "jspdf-autotable": "2.0.8"
   },
   "resolutions": {
     "ember-qunit-notifications": "0.1.0",
